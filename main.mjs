@@ -2,8 +2,8 @@ const DEEPAR_ROOT = "https://d3jgs8uysn2mr7.cloudfront.net/v5.4.3"
 //const DEEPAR_ROOT = "https://d3jgs8uysn2mr7.cloudfront.net/v5.4.3"
 //const DEEPAR_ROOT = "./js/3rdparty/DeepAR-Web-v5.4.3/"
 
-import * as deepar from './js/deepar.esm.js'
-import * as Beauty from "../beauty-deepar/beauty-deepar.esm.js"
+import * as deepar from 'https://cdn.jsdelivr.net/npm/deepar/js/deepar.esm.js';
+import * as Beauty from 'https://cdn.jsdelivr.net/npm/@deepar/beauty/dist/beauty-deepar.esm.js';
 
 const ICON_ARROW_RIGHT = "./img/icon/right-arrow.png";
 const ICON_ARROW_DOWN = "./img/icon/arrow-down.png";
