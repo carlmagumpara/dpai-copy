@@ -1,0 +1,240 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Beauty Example</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/alwan.min.css">
+    <style>
+        html {
+            font-size: min(max(8px, 3vw), 20px);
+            white-space: nowrap;
+        }
+
+        #div-viewport {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+        }
+        #div-deepar {
+            width: 70%;
+            height: auto;
+            margin: 0;
+        }
+        #div-beauty-controls {
+            width: 45%;
+            height: auto;
+            background-color: white;
+            overflow-y: auto;
+        }
+
+        .div-namespace {
+            display: flex;
+            flex-wrap: nowrap;
+            flex-shrink: 4;
+            justify-content: flex-start;
+        }
+
+        .icon-namespace {
+            height: 0.7em;
+            width: 0.7em;
+            margin: auto 0.5em auto auto;
+        }
+
+        .btn-namespace {
+            width: auto;
+            height: 2em;
+            text-align: left;
+            background-color: transparent;
+            border-radius: 0;
+            border-style: none;
+
+            display: flex;
+            flex-wrap: nowrap;
+            flex-shrink: 4;
+            justify-content: flex-start;
+        }
+
+        .btn-namespace-reset {
+            width: auto;
+            height: 1.5em;
+            margin-left: 0.5em;
+
+            display: flex;
+            flex-wrap: nowrap;
+            flex-shrink: 4;
+            justify-content: flex-start;
+        }
+
+        .btn-namespace-reset:hover {
+            cursor: pointer;
+        }
+
+        .div-namespace:hover {
+            background-color: #adb5bd;
+        }
+
+        .color-btn {
+            border-radius: 100%;
+            width: 2em;
+            height: 2em;
+            border-style: none;
+        }
+
+        .color-btn:hover {
+            border-style: solid;
+            border-color: black;
+        }
+
+        .color-btn-checked {
+            border-style: solid;
+            border-color: black;
+        }
+
+        .color-btn-eyedropper {
+            width: 1.2em;
+            height: 1.2em;
+            border-radius: 100%;
+            position: relative;
+            left: -1.55em;
+            bottom: 0.35em
+        }
+    </style>
+</head>
+<body>
+<div id="div-viewport">
+    <div id="div-deepar">
+        <div id="div-reset-buttons" style="display: none; position: absolute">
+            <div id="div-export-dropdown" class="btn-group">
+                <img src="images/export.png" class="dropdown-toggle btn-namespace-reset" data-bs-toggle="dropdown" aria-expanded="false">
+                <ul class="dropdown-menu">
+                    <li><a id="exportLookBtn" class="dropdown-item" href="#">Export as Look</a></li>
+                    <li><a id="exportPresetBtn" class="dropdown-item" href="#">Export as Preset</a></li>
+                    <li><a id="exportParameterPresetBtn" class="dropdown-item" href="#">Export as Parameter-Preset</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="spinner" class="spinner-border text-success position-absolute bottom-0" role="status" style="display: none">
+            <span class="sr-only"></span>
+        </div>
+    </div>
+    <div id="div-beauty-controls">
+<!--        <div>-->
+<!--            <div class="div-namespace">-->
+<!--                <button class="btn-namespace" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample">-->
+<!--                    <img class="icon-namespace" src="img/icon/right-arrow.png" data-bd-toggle="namespace-icon">test-->
+<!--                </button>-->
+<!--                <img class="btn-namespace-reset" src="img/icon/refresh.png">-->
+<!--                <img class="btn-namespace-reset" src="img/icon/eye.png">-->
+<!--            </div>-->
+<!--            <div class="collapse" id="collapseExample">-->
+
+<!--                <div class="card card-body" style="margin-left: 1em; border-color: white">-->
+<!--                    <div style="display: flex">-->
+<!--                        <label for="customRange2" class="form-label">Amount: 0 </label>-->
+<!--                        <img class="btn-namespace-reset" src="img/icon/refresh.png">-->
+<!--                        <img class="btn-namespace-reset" src="img/icon/eye.png">-->
+<!--                    </div>-->
+<!--                    <input type="range" class="form-range" min="0" max="100" id="customRange2" value="0">-->
+<!--                </div>-->
+
+<!--                <div class="card card-body" style="margin-left: 1em; border-color: white;">-->
+<!--                    <div style="display: flex">-->
+<!--                        Color-->
+<!--                        <img class="btn-namespace-reset" src="img/icon/refresh.png">-->
+<!--                        <img class="btn-namespace-reset" src="img/icon/eye.png">-->
+<!--                    </div>-->
+<!--                    <div id="colorExample"></div>-->
+<!--                </div>-->
+
+<!--                <div class="card card-body" style="margin-left: 1em; border-color: white">-->
+<!--                    <div style="display: flex">-->
+<!--                        Texture-->
+<!--                        <img class="btn-namespace-reset" src="img/icon/refresh.png">-->
+<!--                        <img class="btn-namespace-reset" src="img/icon/eye.png">-->
+<!--                    </div>-->
+<!--                    <div class="btn-group btn-group-sm d-flex flex-wrap" role="group" aria-label="Basic example">-->
+<!--                        <button type="button" class="btn btn-secondary">Left</button>-->
+<!--                        <button type="button" class="btn btn-secondary">Left</button>-->
+<!--                        <button type="button" class="btn btn-secondary">Left</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="card card-body" style="margin-left: 1em; border-color: white;">-->
+<!--                    <div class="form-check form-switch">-->
+<!--                        <div style="display: flex">-->
+<!--                            <div>-->
+<!--                                <label class="form-check-label" for="flexSwitchCheckDefault">Enable</label>-->
+<!--                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">-->
+<!--                            </div>-->
+<!--                            <img class="btn-namespace-reset" src="img/icon/refresh.png">-->
+<!--                            <img class="btn-namespace-reset" src="img/icon/eye.png">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="importModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Apply Preset</h5>
+                <button id="importModalCloseBtn" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="looks-tab" data-bs-toggle="tab" data-bs-target="#looks" type="button" role="tab" aria-controls="looks" aria-selected="true">Looks</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="presets-tab" data-bs-toggle="tab" data-bs-target="#presets" type="button" role="tab" aria-controls="presets" aria-selected="false">Presets</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="fromFile-tab" data-bs-toggle="tab" data-bs-target="#fromFile" type="button" role="tab" aria-controls="fromFile" aria-selected="false">From file</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="looks" role="tabpanel" aria-labelledby="looks-tab">
+                        <div class="list-group" id="looks-list"></div>
+                    </div>
+                    <div class="tab-pane fade" id="presets" role="tabpanel" aria-labelledby="presets-tab">
+                        <div class="list-group" id="presets-list"></div>
+                    </div>
+                    <div class="tab-pane fade" id="fromFile" role="tabpanel" aria-labelledby="fromFile-tab">
+                        <input id="importModalFileInput" type="file" accept="application/zip">
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <div class="btn-group dropstart">
+                    <button id="importModalOverrideDropdownBtn" type="button" disabled="" title="Override default import action." class="btn btn-primary btn-sm dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="visually-hidden">Import as ...</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a id="importModalLookBtn" class="dropdown-item" href="#">Import as Look</a></li>
+                        <li><a id="importModalPresetBtn" class="dropdown-item" href="#">Import as Preset</a></li>
+                        <li><a id="importModalParameterPresetBtn" class="dropdown-item" href="#">Import as Parameter-Preset</a></li>
+                    </ul>
+                    <button id="importModalDefaultImportBtn" type="button" class="btn btn-primary" disabled="">
+                        Import
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="main.mjs"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/alwan.min.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+
+</body></html>
