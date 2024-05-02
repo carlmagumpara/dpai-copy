@@ -2,7 +2,7 @@ const DEEPAR_ROOT = "https://d3jgs8uysn2mr7.cloudfront.net/v5.4.3"
 //const DEEPAR_ROOT = "https://d3jgs8uysn2mr7.cloudfront.net/v5.4.3"
 //const DEEPAR_ROOT = "./js/3rdparty/DeepAR-Web-v5.4.3/"
 
-import * as deepar from 'https://d3jgs8uysn2mr7.cloudfront.net/v5.4.3/js/deepar.esm.js'
+import * as deepar from './js/deepar.esm.js'
 import * as Beauty from "../beauty-deepar/beauty-deepar.esm.js"
 
 const ICON_ARROW_RIGHT = "./img/icon/right-arrow.png";
