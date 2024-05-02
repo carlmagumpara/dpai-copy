@@ -1,4 +1,6 @@
-const DEEPAR_ROOT = "https://d3jgs8uysn2mr7.cloudfront.net/v5.4.3"
+const DEEPAR_ROOT = "/effects"
+
+// const DEEPAR_ROOT = "https://d3jgs8uysn2mr7.cloudfront.net/v5.4.3"
 //const DEEPAR_ROOT = "https://d3jgs8uysn2mr7.cloudfront.net/v5.4.3"
 //const DEEPAR_ROOT = "./js/3rdparty/DeepAR-Web-v5.4.3/"
 
@@ -560,11 +562,11 @@ class ParameterBoolean {
 }
 
 function preDownloadDeepARFiles() {
-    fetch(`${DEEPAR_ROOT}/wasm/deepar.wasm`)
-    fetch(`${DEEPAR_ROOT}/models/face/models-68-extreme.bin`)
-    fetch(`${DEEPAR_ROOT}/mediaPipe/segmentation/models/selfie_segmenter.tflite`)
-    fetch(`${DEEPAR_ROOT}/mediaPipe/segmentation/wasm/vision_wasm_internal.js`)
-    fetch(`${DEEPAR_ROOT}/mediaPipe/segmentation/wasm/vision_wasm_internal.wasm`)
+    fetch(`${DEEPAR_ROOT}/deepar.wasm`)
+    fetch(`${DEEPAR_ROOT}/models-68-extreme.bin`)
+    fetch(`${DEEPAR_ROOT}/selfie_segmenter.tflite`)
+    fetch(`${DEEPAR_ROOT}/vision_wasm_internal.js`)
+    fetch(`${DEEPAR_ROOT}/vision_wasm_internal.wasm`)
 }
 
 // Start downloading DeepAR files as soon as possible
