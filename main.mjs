@@ -578,7 +578,7 @@ console.log(`DeepAR version: ${deepar.version}`);
 
 const main = async function() {
     const deepAR = await deepar.initialize({
-        licenseKey: "836eec3a4a513adb73d0631cafaa3da68c269e21e5a2c720397a68e8ace41824a92d9abd8884b9c6",
+        licenseKey: "67d64039f539b97c837c16b38e18ff6a67e6746d188028f67ec2d6d1161081bc95649f5837c0e922",
         // rootPath: DEEPAR_ROOT,
         previewElement: deeparDiv,
         additionalOptions: {
